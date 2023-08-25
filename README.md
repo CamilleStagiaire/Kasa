@@ -1,3 +1,27 @@
+# Kasa
+
+# Développez une application Web avec React et React Router - Projet 11
+https://github.com/CamilleStagiaire/Kasa.git
+
+*Formation Développeur d'application - JavaScript React*
+
+# Etapes
+* Initialisation du projet :
+- npx create-react-app Kasa
+- npm install sass
+
+* Ajout de React-Router :
+- npm install react-router-dom
+
+* Créer le routeur et les différentes pages de l’application :
+- npx create-react-app Kasa
+
+# Compétences évaluées:
+
+- Créer des composants avec React
+- Développer les routes d'une application web avec React Router
+- Initialiser une application web avec un framework
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -3,7 +3,7 @@ import logo from '../../assets/logo.svg';
 
 function Header() {
     return (
-      <header>
+      <header className="header">
         <img src={logo} alt="Logo" />
         <nav>
           <Link to="/">Accueil</Link>

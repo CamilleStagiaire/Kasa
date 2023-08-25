@@ -1,9 +1,7 @@
-//import { useParams } from 'react-router-dom'
-
 function Logement() {
     return (
         <div>
-            <h1>Logements</h1>
+            <h1>Logement</h1>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-const Card = (props) => {
+function Card(props) {
   return (
     <article className="card">
       <img src={props.picture} alt={props.title} />
