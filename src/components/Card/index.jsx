@@ -1,10 +1,8 @@
-import React from 'react';
-
-const Card = ({ title, picture }) => {
+const Card = (props) => {
   return (
     <article className="card">
-      <img src={picture} alt={title} />
-      <h3>{title}</h3>
+      <img src={props.picture} alt={props.title} />
+      <h3>{props.title}</h3>
     </article>
   );
 };
