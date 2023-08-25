@@ -1,0 +1,15 @@
+@mixin img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin margins {
+    margin: 20px;
+    @media #{$small-up} {
+        margin: 0 40px;
+    }
+    @media #{$large-up} {
+        margin: 0 100px;
+      }
+}

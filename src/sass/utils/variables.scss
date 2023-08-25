@@ -1,0 +1,33 @@
+// police
+$font-text: 'Montserrat', sans-serif;
+
+// les couleurs
+$color-primary: #FF6060;
+$color-secondary: #F6F6F6;
+$color-background: #FAFAFA;
+$color-footer : #000000;
+//$color-form : #312E2E;
+//$color-btn-hover:#ffd1c6;
+
+// border-radius
+$border-radius-banner: 25px;
+$border-radius-img: 10px;
+
+
+//gradient
+
+/* -------------------------
+MEDIA QUERIES 
+----------------------------*/
+// Largeur max
+$max-width: 1440px;
+$max-width-body: 1240px;
+
+// breakpoints
+$small: 768px;
+//$medium: 992px;
+$large: 1200px;
+
+$small-up: "only screen and (min-width: #{$small})";
+//$medium-up: "only screen and (min-width: #{$medium})";
+$large-up: "only screen and (min-width: #{$large})";

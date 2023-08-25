@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../components/Card';
+import Banner from '../../components/Banner';
 
 function Home() {
   const [data, setData] = useState([]);
@@ -15,10 +16,11 @@ function Home() {
   }, []);
 
   return (
-    <div className="App">
-      <main>
-        <h1>Bonjour</h1>
-        <div className="card-container">
+      <main className="home">
+        <div className="banner">
+          <Banner />
+        </div>
+        <div className="gallery">
           {data.map((logement) => (
             <Card
               key={logement.id}
@@ -28,7 +30,6 @@ function Home() {
           ))}
         </div>
       </main>
-    </div>
   );
 }
 

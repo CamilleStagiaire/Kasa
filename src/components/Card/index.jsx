@@ -1,8 +1,8 @@
 function Card(props) {
   return (
-    <article className="card">
+    <article className="gallery_card">
       <img src={props.picture} alt={props.title} />
-      <h3>{props.title}</h3>
+      <h3 className="gallery_title">{props.title}</h3>
     </article>
   );
 };

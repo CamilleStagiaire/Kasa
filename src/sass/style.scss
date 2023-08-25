@@ -1,7 +1,212 @@
-.footer {
-    background: #000;
+@import "utils/variables.scss";
+@import "utils/mixins.scss";
 
-    p{
+body {
+    font-family: $font-text;
+    max-width: $max-width;
+    margin: auto;
+    margin-top: 20px;
+
+    @media #{$small-up} {
+        margin-top: 40px;
+    }
+}
+
+.header {
+    @include margins;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 145px;
+        height: 47px;
+
+        @media #{$small-up} {
+            width: 210.32px;
+            height: 68px;
+        }
+    }
+
+    nav {
+        a {
+            text-decoration: none;
+            color: $color-primary;
+            font-size: 12px;
+            font-weight: 500;
+
+            @media #{$small-up} {
+                font-size: 24px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        display: flex;
+        gap: 20px;
+
+        @media #{$small-up} {
+            gap: 40px;
+        }
+    }
+}
+
+.home {
+    @include margins;
+
+    .banner {
+        margin: 20px 0;
+
+        @media #{$small-up} {
+            margin: 35px 0;
+        }
+
+        @media #{$large-up} {
+            margin: 50px 0;
+        }
+
+
+        &_container {
+            position: relative;
+            height: 111px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: $border-radius-img;
+
+            @media #{$small-up} {
+                border-radius: $border-radius-banner;
+                height: 167px;
+            }
+
+            @media #{$large-up} {
+                height: 223px;
+            }
+
+            img {
+                @include img;
+                border-radius: $border-radius-img;
+                mix-blend-mode: darken;
+
+                @media #{$small-up} {
+                    border-radius: $border-radius-banner;
+                }
+            }
+
+            .banner_text {
+                position: absolute;
+                top: 50%;
+                left: 35%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+                font-size: 24px;
+                color: white;
+                font-weight: 500;
+                white-space: wrap;
+
+                @media #{$small-up} {
+                    left: 50%;
+                    font-size: 36px;
+                    white-space: nowrap;
+                }
+
+                @media #{$large-up} {
+                    font-size: 48px;
+                }
+            }
+        }
+    }
+
+    .gallery {
+        background-color: white;
+        border-radius: $border-radius-banner;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0px;
+        gap: 20px;
+
+        @media #{$small-up} {
+            padding: 30px;
+            background-color: $color-secondary;
+        }
+
+        @media #{$large-up} {
+            padding: 50px;
+            gap: 30px;
+        }
+
+        &_card {
+            position: relative;
+            width: 335px;
+            height: 255px;
+
+            @media #{$large-up} {
+                width: 340px;
+                height: 340px;
+            }
+
+            img {
+                border-radius: $border-radius-img;
+                @include img;
+                position: relative;
+                z-index: 1;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
+                border-radius: $border-radius-img;
+                z-index: 2;
+                opacity: 0.5;
+            }
+        }
+
+        &_title {
+            width: 70%;
+            position: absolute;
+            top: 80%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            white-space: wrap;
+            z-index: 3;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+
+            @media #{$large-up} {
+                top: 85%;
+            }
+        }
+    }
+}
+
+.footer {
+    background: $color-footer;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0 20px 0;
+    align-items: center;
+    gap: 20px;
+
+    img {
+        width: 122px;
+        height: 39.44px;
+    }
+
+    p {
         color: white;
+        font-size: 12px;
+        font-weight: 500;
+
+        @media #{$small-up} {
+            font-size: 24px;
+        }
     }
 }
