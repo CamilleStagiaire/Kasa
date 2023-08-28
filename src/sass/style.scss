@@ -152,19 +152,6 @@ body {
                 position: relative;
                 z-index: 1;
             }
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
-                border-radius: $border-radius-img;
-                z-index: 2;
-                opacity: 0.5;
-            }
         }
 
         &_title {
@@ -182,6 +169,20 @@ body {
             @media #{$large-up} {
                 top: 85%;
             }
+        }
+
+        &_gradient {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, #FFFFFF 0%, #000000 50%);
+            border-radius: $border-radius-img;
+            z-index: 2;
+            opacity: 0.5;
+            pointer-events: none;
         }
     }
 }

@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import Card from '../../components/Card';
 import Banner from '../../components/Banner';
+import { LogementContext } from '../../contexts/LogementContext';
 
 function Home() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('/logements.json')
-      .then((response) => response.json())
-      .then((jsonData) => {
-        setData(jsonData);
-        console.log(jsonData);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
+  const { data } = useContext(LogementContext);
+ 
   return (
       <main className="home">
         <div className="banner">
@@ -24,6 +16,7 @@ function Home() {
           {data.map((logement) => (
             <Card
               key={logement.id}
+              id={logement.id} 
               title={logement.title}
               picture={logement.cover}
             />
