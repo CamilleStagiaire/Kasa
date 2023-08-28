@@ -6,16 +6,24 @@ https://github.com/CamilleStagiaire/Kasa.git
 *Formation Développeur d'application - JavaScript React*
 
 # Etapes
-Initialisation du projet :
-    - npx create-react-app Kasa
-    - npm install sass
+- Initialisation du projet :
+npx create-react-app Kasa
+npm install sass
 
-Ajout de React-Router :
-- npm install react-router-dom
+- Ajout de React-Router :
+npm install react-router-dom
 
-Créer le routeur et les différentes pages de l’application
+- Créer le routeur et les différentes pages de l’application
+</Link>
 
-Créer la page d’accueil
+- Créer la page d’accueil:
+useState() - useEffect()
+createContext() - useContext()
+
+- Créer la page À propos:
+src/datas/about.json
+
+- Mettre en page la page d’erreur
 
 
 # Compétences évaluées:

@@ -19,6 +19,6 @@ function AppRouter() {
       <Footer />
     </Router>
   );
-};
+}
 
 export default AppRouter;

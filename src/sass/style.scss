@@ -31,12 +31,19 @@ body {
     nav {
         a {
             text-decoration: none;
+            text-transform: uppercase;
             color: $color-primary;
             font-size: 12px;
             font-weight: 500;
 
             @media #{$small-up} {
+                text-transform: lowercase;
                 font-size: 24px;
+
+                &::first-letter,
+                .capitalize {
+                    text-transform: capitalize;
+                }
             }
 
             &:hover {
@@ -60,13 +67,12 @@ body {
         margin: 20px 0;
 
         @media #{$small-up} {
-            margin: 35px 0;
+            margin: 30px 0;
         }
 
         @media #{$large-up} {
             margin: 50px 0;
         }
-
 
         &_container {
             position: relative;
@@ -121,19 +127,19 @@ body {
         background-color: white;
         border-radius: $border-radius-banner;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
-        padding: 0px;
+        padding-top: 0px;
         gap: 20px;
 
         @media #{$small-up} {
-            padding: 30px;
+            padding-top: 30px;
             background-color: $color-secondary;
         }
 
         @media #{$large-up} {
-            padding: 50px;
-            gap: 30px;
+            padding-top: 50px;
+            gap: 50px;
         }
 
         &_card {
@@ -187,9 +193,122 @@ body {
     }
 }
 
+.about {
+    @include margins;
+
+    .banner {
+        margin-top: 40px;
+
+        &_container {
+            position: relative;
+            height: 223px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: $border-radius-img;
+
+            @media #{$small-up} {
+                border-radius: $border-radius-banner;
+            }
+
+            img {
+                @include img;
+                border-radius: $border-radius-img;
+                mix-blend-mode: darken;
+
+                @media #{$small-up} {
+                    border-radius: $border-radius-banner;
+                }
+            }
+        }
+    }
+
+    .collapse {
+        max-width: 1023px;
+        margin: auto;
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            background-color: $color-secondary;
+            border-radius: 0 0 $border-radius-img $border-radius-img;
+        }
+
+        &_title {
+            height: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $color-primary;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+
+            @media #{$small-up} {
+                margin-top: 30px;
+                padding: 5px 30px 5px 20px;
+            }
+
+            &::after {
+                content: url('../assets/chevronUp_mobiles.svg');
+
+                @media #{$small-up} {
+                    content: url('../assets/chevronUp.svg');
+                }
+            }
+
+            &.open::after {
+                content: url('../assets/chevronDown_mobiles.svg');
+
+                @media #{$small-up} {
+                    content: url('../assets/chevronDown.svg');
+                }
+            }
+
+            @media #{$small-up} {
+                height: 47px;
+                font-size: 20px;
+            }
+
+            @media #{$large-up} {
+                font-size: 24px;
+            }
+        }
+
+        &_text {
+            font-size: 12px;
+            color: $color-primary;
+            padding: 0 10px;
+            transition: all 0.2s ease-in-out;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+
+            &.open {
+                padding: 10px;
+                opacity: 1;
+                max-height: 150px;
+            }
+
+            @media #{$small-up} {
+                font-size: 20px;
+            }
+
+            @media #{$large-up} {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
 .footer {
     background: $color-footer;
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     padding: 60px 0 20px 0;

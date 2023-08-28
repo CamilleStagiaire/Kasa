@@ -6,10 +6,12 @@
 
 @mixin margins {
     margin: 20px;
+
     @media #{$small-up} {
-        margin: 0 40px;
+        margin: 30px;
     }
+
     @media #{$large-up} {
         margin: 0 100px;
-      }
+    }
 }
