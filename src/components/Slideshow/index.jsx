@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import ArrowLeft from '../../assets/arrowLeft.svg';
+import ArrowRight from '../../assets/arrowRight.svg';
 
 function Slideshow({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,15 +22,14 @@ function Slideshow({ pictures }) {
   };
 
   return (
-    <div>
+    <div className="logement_slideshow">
+       <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
       {pictures.length > 1 && (
-        <div>
-          <div onClick={handlePrev}>Précédent</div>
-          <div onClick={handleNext}>Suivant</div>
-          <div>{`${currentIndex + 1}/${pictures.length}`}</div>
+        <div className="logement_slideshow_arrows">
+          <div className="prev" onClick={handlePrev}></div>
+          <div className="next" onClick={handleNext}></div>
         </div>
       )}
-      <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
     </div>
   );
 }

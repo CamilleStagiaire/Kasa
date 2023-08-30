@@ -7,9 +7,9 @@ function Rating({ value }) {
       let className = 'star';
   
       if (i <= value) {
-        className += ' primary';
+        className += '_value';
       } else {
-        className += ' secondary';
+        className += '_rest';
       }
   
       stars.push(

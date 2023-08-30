@@ -12,34 +12,24 @@ body {
     }
 }
 
-// .star {
-//     width: 16px;
-//     height: 16px;
-//     @media #{$small-up} {
-//         width: 32px;
-//         height: 32px;
-//     }
-// }
 
-.star.primary svg {
-    fill: $color-primary;
-    width: 18px;
-    height: 18px;
-  }
-  
-  .star.secondary svg {
-    fill: $color-star;
-    width: 18px;
-    height: 18px;
-  }
-  
-  @media  #{$small-up} {
-    .star.primary svg,
-    .star.secondary svg {
-      width: 32px;
-      height: 32px;
+.star {
+
+    @each $type,
+    $color in ("value": $color-primary, "rest": $color-star) {
+        &_#{$type} svg {
+            color: $color;
+            width: 18px;
+            height: 18px;
+
+            @media #{$small-up} {
+                width: 24px;
+                height: 24px;
+            }
+        }
     }
-  }
+}
+
 
 .header {
     @include margins;
@@ -250,8 +240,9 @@ body {
         }
     }
 
-    
+
 }
+
 .collapse {
     max-width: 1023px;
     margin: auto;
@@ -341,13 +332,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     color: $color-primary;
 
     &_404 {
         margin: 100px 0 30px 0;
         font-size: 96px;
         font-weight: 700;
+
         @media #{$small-up} {
             font-size: 192px;
         }
@@ -361,11 +353,12 @@ body {
         text-align: center;
         font-size: 18px;
         font-weight: 500;
+
         @media #{$small-up} {
             font-size: 36px;
         }
 
-       
+
     }
 
     &_link {
@@ -374,6 +367,7 @@ body {
         text-decoration: none;
         font-size: 14px;
         font-weight: 500;
+
         @media #{$small-up} {
             font-size: 18px;
         }
@@ -385,17 +379,76 @@ body {
     }
 }
 
-.star {
-    font-size: 24px;
-  }
-  
-  .primary {
-    color: $color-primary;
-  }
-  
-  .secondary {
-    color: $color-star;
-  }
+
+
+.logement {
+    @include margins;
+
+    &_slideshow {
+        margin: 20px 0 20px 0;
+        height: 255px;
+        position: relative;
+
+        @media #{$small-up} {
+            max-width: 1240px;
+            height: 415px;
+        }
+
+        img {
+            @include img;
+        }
+
+        &_arrows {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+            .prev::after,
+            .next::after {
+                content: "";
+                position: absolute;
+                top: 60%;
+                transform: translateY(-50%);
+                width: 80px;
+                height: 80px;
+                @media #{$small-up} {
+                    top: 50%;
+                }
+            }
+
+            .prev::after {
+                background: url('../assets/arrowLeft_mobiles.svg') no-repeat;
+                left: 10px;
+                cursor: pointer;
+                @media #{$small-up} {
+                    left: 20px;
+                    background: url('../assets/arrowLeft.svg') no-repeat;
+                }
+            }
+
+            .next::after {
+                background: url('../assets/arrowRight_mobiles.svg') no-repeat;
+                right: -45px;
+                cursor: pointer;
+                @media #{$small-up} {
+                    right: -10px;
+                    background: url('../assets/arrowRight.svg') no-repeat;
+                }
+            }
+        }
+    }
+
+    &_présentation {
+
+        &_text {}
+
+        &_host {}
+
+        &_collapse {}
+
+    }
+}
 
 .footer {
     background: $color-footer;

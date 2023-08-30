@@ -14,21 +14,21 @@ function Logement() {
   const logement = data.find((item) => item.id === id);
 
   return (
-    <div>
+    <div className="logement">
     {logement ? (
       <>
         <Slideshow pictures={logement.pictures} />
-        <div>
-          <div>
+        <div className="logement_presentation">
+          <div className="logement_presentation_text">
             <h2>{logement.title}</h2>
             <p>{logement.location}</p>
             <Tags tags={logement.tags} />
           </div>
-          <div>
+          <div className="logement_presentation_host">
             <Host name={logement.host.name} picture={logement.host.picture} />
             <Rating value={logement.rating} />
           </div>
-          <div>
+          <div className="logement_presentation_collapse">
             <Collapse title="Description" content={logement.description} />
             <Collapse title="Équipements" content={logement.equipments.join(' ')} />
 

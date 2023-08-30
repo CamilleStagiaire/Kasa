@@ -25,6 +25,14 @@ src/datas/about.json
 
 - Mettre en page la page d’erreur
 
+-  Créez le carrousel de la page de logement:  
+Accessibilité clavier
+
+
+- Vérifier l'ensemble du site:  
+Eslint  
+Prettier
+
 
 # Compétences évaluées:
 
