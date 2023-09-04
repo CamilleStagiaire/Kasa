@@ -19,7 +19,7 @@ function Rating({ value }) {
       );
     }
   
-    return <div className="rating">{stars}</div>;
+    return <div className="logement_presentation_rating">{stars}</div>;
   }
   
   export default Rating;

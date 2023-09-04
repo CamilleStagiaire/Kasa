@@ -15,30 +15,42 @@ function Logement() {
 
   return (
     <div className="logement">
-    {logement ? (
-      <>
-        <Slideshow pictures={logement.pictures} />
-        <div className="logement_presentation">
-          <div className="logement_presentation_text">
-            <h2>{logement.title}</h2>
-            <p>{logement.location}</p>
-            <Tags tags={logement.tags} />
+      {logement ? (
+        <>
+          <Slideshow pictures={logement.pictures} />
+          <div className="logement_presentation">
+            <div className="logement_presentation_text">
+              <h2 className="logement_presentation_text_name">
+                {logement.title}
+              </h2>
+              <p className="logement_presentation_text_location">
+                {logement.location}
+              </p>
+              <Tags tags={logement.tags} />
+            </div>
+            <div className="logement_presentation_host">
+              <Rating value={logement.rating} />
+              <Host name={logement.host.name} picture={logement.host.picture} />
+            </div>
           </div>
-          <div className="logement_presentation_host">
-            <Host name={logement.host.name} picture={logement.host.picture} />
-            <Rating value={logement.rating} />
-          </div>
-          <div className="logement_presentation_collapse">
+          <div className="logement_collapse">
             <Collapse title="Description" content={logement.description} />
-            <Collapse title="Équipements" content={logement.equipments.join(' ')} />
-
+            <Collapse
+              title="Équipements"
+              content={
+                <div>
+                  {logement.equipments.map((equip, index) => (
+                    <div key={index}>{equip}</div>
+                  ))}
+                </div>
+              }
+            />
           </div>
-        </div>
-      </>
-    ) : (
-      <p>Logement introuvable</p>
-    )}
-  </div>
+        </>
+      ) : (
+        <p>Logement introuvable</p>
+      )}
+    </div>
   );
 }
 

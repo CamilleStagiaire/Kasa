@@ -1,23 +1,27 @@
 import { useState } from 'react';
-import ArrowLeft from '../../assets/arrowLeft.svg';
-import ArrowRight from '../../assets/arrowRight.svg';
 
 function Slideshow({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const changeSlide = (newIndex) => {
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+    }, 500);
+  };
+
   const handleNext = () => {
     if (currentIndex < pictures.length - 1) {
-      setCurrentIndex(currentIndex + 1);
+      changeSlide(currentIndex + 1);
     } else {
-      setCurrentIndex(0);
+      changeSlide(0);
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
+      changeSlide(currentIndex - 1);
     } else {
-      setCurrentIndex(pictures.length - 1);
+      changeSlide(pictures.length - 1);
     }
   };
 

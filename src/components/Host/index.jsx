@@ -1,10 +1,16 @@
 function Host({ name, picture }) {
-    return (
-      <div>
-        <h3>{name}</h3>
+  const [firstName, lastName] = name.split(' ');
+
+  return (
+    <div className="logement_presentation_host_profil">
+      <p className="logement_presentation_host_profil_name">
+        {firstName} <br /> {lastName}
+      </p>
+      <div className="logement_presentation_host_profil_img">
         <img src={picture} alt={name} />
       </div>
-    );
-  }
-  
-  export default Host;
+    </div>
+  );
+}
+
+export default Host;

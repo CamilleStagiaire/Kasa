@@ -12,12 +12,12 @@ body {
     }
 }
 
-
 .star {
 
     @each $type,
     $color in ("value": $color-primary, "rest": $color-star) {
         &_#{$type} svg {
+            padding: 4px;
             color: $color;
             width: 18px;
             height: 18px;
@@ -29,7 +29,6 @@ body {
         }
     }
 }
-
 
 .header {
     @include margins;
@@ -253,7 +252,7 @@ body {
 
     li {
         list-style-type: none;
-        background-color: $color-secondary;
+
         border-radius: 0 0 $border-radius-img $border-radius-img;
     }
 
@@ -314,7 +313,8 @@ body {
         &.open {
             padding: 10px;
             opacity: 1;
-            max-height: 150px;
+            max-height: 250px;
+            background-color: $color-secondary;
         }
 
         @media #{$small-up} {
@@ -379,10 +379,10 @@ body {
     }
 }
 
-
-
 .logement {
     @include margins;
+    display: flex;
+    flex-direction: column;
 
     &_slideshow {
         margin: 20px 0 20px 0;
@@ -396,6 +396,7 @@ body {
 
         img {
             @include img;
+            border-radius: $border-radius-banner;
         }
 
         &_arrows {
@@ -412,6 +413,7 @@ body {
                 transform: translateY(-50%);
                 width: 80px;
                 height: 80px;
+
                 @media #{$small-up} {
                     top: 50%;
                 }
@@ -421,6 +423,7 @@ body {
                 background: url('../assets/arrowLeft_mobiles.svg') no-repeat;
                 left: 10px;
                 cursor: pointer;
+
                 @media #{$small-up} {
                     left: 20px;
                     background: url('../assets/arrowLeft.svg') no-repeat;
@@ -431,6 +434,7 @@ body {
                 background: url('../assets/arrowRight_mobiles.svg') no-repeat;
                 right: -45px;
                 cursor: pointer;
+
                 @media #{$small-up} {
                     right: -10px;
                     background: url('../assets/arrowRight.svg') no-repeat;
@@ -439,14 +443,118 @@ body {
         }
     }
 
-    &_présentation {
+    &_presentation {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
 
-        &_text {}
+        @media #{$small-up} {
+            flex-direction: row;
+        }
 
-        &_host {}
+        &_text {
+            &_name {
+                color: $color-primary;
+                font-size: 36px;
+                font-weight: 500;
+                margin: 10px 0 0 0;
+            }
 
-        &_collapse {}
+            &_location {
+                color: $color-primary;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 10px 0 0 0;
+            }
 
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            li {
+                list-style-type: none;
+                color: white;
+                font-size: 10px;
+                font-weight: 500;
+                list-style-type: none;
+                background-color: $color-primary;
+                padding: 5px;
+                border-radius: $border-radius-img;
+                text-align: center;
+                margin: 0 10px 5px 0px;
+
+                @media #{$small-up} {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &_host {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media #{$small-up} {
+                flex-direction: column-reverse;
+                min-width: 200px;
+                justify-content: flex-end;
+            }
+
+            &_profil {
+
+                display: flex;
+                gap: 10px;
+
+                &_name {
+                    color: $color-primary;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+
+                &_img {
+                    height: 32px;
+                    width: 32px;
+                    margin: auto;
+
+                    @media #{$small-up} {
+                        height: 64px;
+                        width: 64px;
+                    }
+
+                    img {
+                        @include img;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            &_rating {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &_collapse {
+        z-index: 2;
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        gap: 20px;
+
+        @media #{$small-up} {
+            flex-direction: row;
+        }
+
+        .collapse_title {
+            margin-top: 0;
+            border-radius: $border-radius-img;
+        }
+
+        .collapses {
+            flex: 1;
+        }
     }
 }
 

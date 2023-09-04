@@ -8,7 +8,7 @@ function Collapse(props) {
   };
 
   return (
-    <div>
+    <div className="collapses">
       <div
         className={`collapse_title ${isOpen ? 'open' : ''}`}
         onClick={toggleCollapse}>
