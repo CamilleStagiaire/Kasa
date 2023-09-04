@@ -25,9 +25,15 @@ src/datas/about.json
 
 - Mettre en page la page d’erreur
 
--  Créez le carrousel de la page de logement:  
-Accessibilité clavier
+-  Créez le carrousel de la page de logement
 
+- Finaliser la page de logement
+
+- Gérer l’erreur sur l’id d’une propriété
+
+- Accessibilité du site
+
+- Revue de code
 
 - Vérifier l'ensemble du site:  
 Eslint  

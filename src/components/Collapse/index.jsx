@@ -7,11 +7,20 @@ function Collapse(props) {
     setIsOpen(!isOpen);
   };
 
+  const handleKeyDown = (event) => {  
+    if (event.key === 'Enter' || event.key === ' ') {
+      toggleCollapse();
+    }
+  };
+
   return (
     <div className="collapses">
       <div
+        tabIndex={0} 
         className={`collapse_title ${isOpen ? 'open' : ''}`}
-        onClick={toggleCollapse}>
+        onClick={toggleCollapse}
+        onKeyDown={handleKeyDown} 
+      >
         {props.title}
       </div>
       <div className={`collapse_text ${isOpen ? 'open' : ''}`}>
@@ -22,3 +31,4 @@ function Collapse(props) {
 }
 
 export default Collapse;
+

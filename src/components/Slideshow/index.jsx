@@ -25,17 +25,36 @@ function Slideshow({ pictures }) {
     }
   };
 
+  const handleKeyDown = (event, callback) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      callback();
+    }
+  };
+
   return (
     <div className="logement_slideshow">
        <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
       {pictures.length > 1 && (
         <div className="logement_slideshow_arrows">
-          <div className="prev" onClick={handlePrev}></div>
-          <div className="next" onClick={handleNext}></div>
+          <button 
+            className="prev" 
+            onClick={handlePrev} 
+            onKeyDown={(e) => handleKeyDown(e, handlePrev)}
+            aria-label="Previous slide"
+          >
+          </button>
+          <button 
+            className="next" 
+            onClick={handleNext} 
+            onKeyDown={(e) => handleKeyDown(e, handleNext)}
+            aria-label="Next slide"
+          >
+          </button>
         </div>
       )}
     </div>
-  );
+);
+
 }
 
 export default Slideshow;
