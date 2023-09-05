@@ -1,0 +1,16 @@
+.star {
+    @each $type,
+    $color in ("value": $color-primary, "rest": $color-star) {
+        &_#{$type} svg {
+            padding: 4px;
+            color: $color;
+            width: 18px;
+            height: 18px;
+
+            @media #{$small-up} {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

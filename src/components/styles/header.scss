@@ -1,0 +1,47 @@
+.header {
+    @include margins;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 145px;
+        height: 47px;
+
+        @media #{$small-up} {
+            width: 210.32px;
+            height: 68px;
+        }
+    }
+
+    nav {
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-primary;
+            font-size: 12px;
+            font-weight: 500;
+
+            @media #{$small-up} {
+                text-transform: lowercase;
+                font-size: 24px;
+
+                &::first-letter,
+                .capitalize {
+                    text-transform: capitalize;
+                }
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        display: flex;
+        gap: 20px;
+
+        @media #{$small-up} {
+            gap: 40px;
+        }
+    }
+}

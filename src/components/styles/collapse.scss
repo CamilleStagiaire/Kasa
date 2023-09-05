@@ -1,0 +1,83 @@
+.collapse {
+    max-width: 1023px;
+    margin: auto;
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        border-radius: 0 0 $border-radius-img $border-radius-img;
+    }
+
+    &_title {
+        height: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $color-primary;
+        color: white;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+
+        @media #{$small-up} {
+            margin-top: 30px;
+            padding: 5px 30px 5px 20px;
+        }
+
+        &::after {
+            content: url('../../assets/chevronUp_mobiles.svg');
+
+            @media #{$small-up} {
+                content: url('../../assets/chevronUp.svg');
+            }
+        }
+
+        &.open::after {
+            content: url('../../assets/chevronDown_mobiles.svg');
+
+            @media #{$small-up} {
+                content: url('../../assets/chevronDown.svg');
+            }
+        }
+
+        @media #{$small-up} {
+            height: 47px;
+            font-size: 20px;
+        }
+
+        @media #{$large-up} {
+            font-size: 24px;
+        }
+    }
+
+    &_text {
+        font-size: 12px;
+        color: $color-primary;
+        padding: 0 10px;
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+
+        &.open {
+            padding: 10px;
+            opacity: 1;
+            max-height: 250px;
+            background-color: $color-secondary;
+        }
+
+        @media #{$small-up} {
+            font-size: 20px;
+        }
+
+        @media #{$large-up} {
+            font-size: 24px;
+        }
+    }
+}

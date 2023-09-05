@@ -21,9 +21,7 @@ $max-width-body: 1240px;
 
 // breakpoints
 $small: 768px;
-//$medium: 992px;
 $large: 1200px;
 
 $small-up: "only screen and (min-width: #{$small})";
-//$medium-up: "only screen and (min-width: #{$medium})";
 $large-up: "only screen and (min-width: #{$large})";

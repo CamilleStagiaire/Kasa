@@ -1,0 +1,28 @@
+.about {
+    @include margins;
+
+    .banner {
+        margin-top: 40px;
+
+        &_container {
+            position: relative;
+            height: 223px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: $border-radius-img;
+
+            @media #{$small-up} {
+                border-radius: $border-radius-banner;
+            }
+
+            img {
+                @include img;
+                border-radius: $border-radius-img;
+                mix-blend-mode: darken;
+
+                @media #{$small-up} {
+                    border-radius: $border-radius-banner;
+                }
+            }
+        }
+    }
+}

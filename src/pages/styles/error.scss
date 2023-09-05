@@ -1,0 +1,48 @@
+.error {
+    @include margins;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: $color-primary;
+
+    &_404 {
+        margin: 100px 0 30px 0;
+        font-size: 96px;
+        font-weight: 700;
+
+        @media #{$small-up} {
+            font-size: 192px;
+        }
+
+        @media #{$large-up} {
+            font-size: 288px;
+        }
+    }
+
+    &_text {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+
+        @media #{$small-up} {
+            font-size: 36px;
+        }
+    }
+
+    &_link {
+        margin: 120px 0 0 50px;
+        color: $color-primary;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+
+        @media #{$small-up} {
+            font-size: 18px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

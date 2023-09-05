@@ -25,11 +25,13 @@ src/datas/about.json
 
 - Mettre en page la page d’erreur
 
--  Créez le carrousel de la page de logement
+- Créer le carrousel de la page de logement:  
+useParams()
 
 - Finaliser la page de logement
 
-- Gérer l’erreur sur l’id d’une propriété
+- Gérer l’erreur sur l’id d’une propriété:  
+useNavigate()
 
 - Accessibilité du site
 

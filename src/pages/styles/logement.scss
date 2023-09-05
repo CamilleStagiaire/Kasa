@@ -1,0 +1,88 @@
+.logement {
+    @include margins;
+    display: flex;
+    flex-direction: column;
+
+    &_presentation {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+        @media #{$small-up} {
+            flex-direction: row;
+        }
+
+        &_text {
+            &_name {
+                color: $color-primary;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0;
+
+                @media #{$small-up} {
+                    font-size: 36px;
+                }
+            }
+
+            &_location {
+                color: $color-primary;
+                font-size: 14px;
+                font-weight: 500;
+                margin: 10px 0 0 0;
+
+                @media #{$small-up} {
+                    font-size: 18px;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+            }
+
+            li {
+                list-style-type: none;
+                color: white;
+                font-size: 10px;
+                font-weight: 500;
+                list-style-type: none;
+                background-color: $color-primary;
+                padding: 5px 20px;
+                border-radius: $border-radius-img;
+                text-align: center;
+                margin: 0 10px 5px 0px;
+
+                @media #{$small-up} {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    &_collapse {
+        z-index: 2;
+        display: flex;
+        gap: 50px;
+        flex-direction: column;
+        gap: 20px;
+
+        @media #{$small-up} {
+            flex-direction: row;
+        }
+
+        .collapse_title {
+            margin-top: 0;
+            border-radius: 5px;
+
+            @media #{$small-up} {
+                border-radius: $border-radius-img;
+            }
+        }
+
+        .collapses {
+            flex: 1;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.logement_slideshow {
+    margin: 20px 0 20px 0;
+    height: 255px;
+    position: relative;
+
+    @media #{$small-up} {
+        max-width: 1240px;
+        height: 415px;
+    }
+
+    img {
+        @include img;
+        border-radius: $border-radius-banner;
+    }
+
+    &_arrows {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    
+        .prev,
+        .next {
+            border: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+    
+        .prev {
+            background: url('/assets/arrowLeft_mobiles.svg') center center no-repeat;
+            left: 0%;
+            @media #{$small-up} {
+                background: url('/assets/arrowLeft.svg') center center no-repeat;
+                left: 5%;
+            }
+        }
+    
+        .next {
+            background: url('/assets/arrowRight_mobiles.svg') center center no-repeat;
+            right: 0%;
+            @media #{$small-up} {
+                background: url('/assets/arrowRight.svg') center center no-repeat;
+                right: 5%;
+            }
+        }
+    }
+}
