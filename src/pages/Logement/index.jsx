@@ -25,8 +25,7 @@ function Logement() {
   }
 
   return (
-    <div className="logement">
-      <>
+    <div className="logement">   
         <Slideshow pictures={logement.pictures} />
         <div className="logement_presentation">
           <div className="logement_presentation_text">
@@ -55,8 +54,7 @@ function Logement() {
               </div>
             }
           />
-        </div>
-      </>
+        </div>   
     </div>
   );
 }

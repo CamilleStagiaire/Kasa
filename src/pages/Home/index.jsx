@@ -1,4 +1,3 @@
-//import React, { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { LogementContext } from '../../contexts/LogementContext';
 import Banner from '../../components/Banner';

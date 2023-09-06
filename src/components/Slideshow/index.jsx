@@ -25,8 +25,8 @@ function Slideshow({ pictures }) {
     }
   };
 
-  const handleKeyDown = (event, callback) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+  const handleKeyDown = (e, callback) => {
+    if (e.key === 'Enter' || e.key === ' ') {
       callback();
     }
   };

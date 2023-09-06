@@ -14,7 +14,8 @@ npm install sass
 npm install react-router-dom
 
 - Créer le routeur et les différentes pages de l’application :  
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'  
+useParams()
 
 - Créer la page d’accueil:  
 useState() - useEffect()  
@@ -25,8 +26,7 @@ src/datas/about.json
 
 - Mettre en page la page d’erreur
 
-- Créer le carrousel de la page de logement:  
-useParams()
+- Créer le carrousel de la page de logement
 
 - Finaliser la page de logement
 
