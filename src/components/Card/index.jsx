@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function Card(props) {
   return (
     <article className="gallery_card">
-        <Link to={`/logement/${props.id}`}>
+        <Link to={`/logement/${props.id}`} aria-label={`Voir les détails pour ${props.title}`}>
           <img src={props.picture} alt={props.title} />
           <h3 className="gallery_title">{props.title}</h3>
         </Link>

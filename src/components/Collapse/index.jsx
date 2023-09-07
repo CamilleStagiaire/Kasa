@@ -7,8 +7,8 @@ function Collapse(props) {
     setIsOpen(!isOpen);
   };
 
-  const handleKeyDown = (event) => {  
-    if (event.key === 'Enter' || event.key === ' ') {
+  const handleKeyDown = (e) => {  
+    if (e.key === 'Enter' || e.key === ' ') {
       toggleCollapse();
     }
   };
@@ -20,6 +20,7 @@ function Collapse(props) {
         className={`collapse_title ${isOpen ? 'open' : ''}`}
         onClick={toggleCollapse}
         onKeyDown={handleKeyDown} 
+        aria-expanded={isOpen}
       >
         {props.title}
       </div>

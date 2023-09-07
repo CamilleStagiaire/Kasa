@@ -40,14 +40,14 @@ function Slideshow({ pictures }) {
             className="prev" 
             onClick={handlePrev} 
             onKeyDown={(e) => handleKeyDown(e, handlePrev)}
-            aria-label="Previous slide"
+            aria-label="Image précédente"
           >
           </button>
           <button 
             className="next" 
             onClick={handleNext} 
             onKeyDown={(e) => handleKeyDown(e, handleNext)}
-            aria-label="Next slide"
+            aria-label="Image suivante"
           >
           </button>
         </div>
