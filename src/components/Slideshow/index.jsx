@@ -33,28 +33,25 @@ function Slideshow({ pictures }) {
 
   return (
     <div className="logement_slideshow">
-       <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
+      <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
       {pictures.length > 1 && (
         <div className="logement_slideshow_arrows">
-          <button 
-            className="prev" 
-            onClick={handlePrev} 
+          <button
+            className="prev"
+            onClick={handlePrev}
             onKeyDown={(e) => handleKeyDown(e, handlePrev)}
             aria-label="Image précédente"
-          >
-          </button>
-          <button 
-            className="next" 
-            onClick={handleNext} 
+          ></button>
+          <button
+            className="next"
+            onClick={handleNext}
             onKeyDown={(e) => handleKeyDown(e, handleNext)}
             aria-label="Image suivante"
-          >
-          </button>
+          ></button>
         </div>
       )}
     </div>
-);
-
+  );
 }
 
 export default Slideshow;

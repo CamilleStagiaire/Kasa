@@ -7,7 +7,7 @@ function Collapse(props) {
     setIsOpen(!isOpen);
   };
 
-  const handleKeyDown = (e) => {  
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       toggleCollapse();
     }
@@ -16,10 +16,10 @@ function Collapse(props) {
   return (
     <div className="collapses">
       <div
-        tabIndex={0} 
+        tabIndex={0}
         className={`collapse_title ${isOpen ? 'open' : ''}`}
         onClick={toggleCollapse}
-        onKeyDown={handleKeyDown} 
+        onKeyDown={handleKeyDown}
         aria-expanded={isOpen}
       >
         {props.title}
@@ -32,4 +32,3 @@ function Collapse(props) {
 }
 
 export default Collapse;
-
