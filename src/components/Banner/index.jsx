@@ -1,10 +1,8 @@
-import banner from '../../assets/banner.svg';
-
-function Banner() {
+function Banner({ src, alt, text}) {
   return (
-    <div className="banner_container">
-      <img src={banner} alt="banner_home" />
-      <h1 className="banner_text">Chez vous, partout et ailleurs</h1>
+    <div className={`banner_container`}>
+      <img src={src} alt={alt} />
+      {text && <h1 className="banner_text">{text}</h1>}
     </div>
   );
 }

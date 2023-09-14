@@ -33,7 +33,7 @@ function Slideshow({ pictures }) {
 
   return (
     <div className="logement_slideshow">
-      <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
+      <img src={pictures[currentIndex]} alt={`Image ${currentIndex}`} />
       {pictures.length > 1 && (
         <div className="logement_slideshow_arrows">
           <button
