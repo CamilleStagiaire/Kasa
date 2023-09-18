@@ -1,27 +1,21 @@
-import { useContext, useEffect} from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import { LogementContext } from '../../contexts/LogementContext';
 import Slideshow from '../../components/Slideshow';
 import Host from '../../components/Host';
 import Rating from '../../components/Rating';
 import Tags from '../../components/Tags';
 import Collapse from '../../components/Collapse';
+import Error404 from '../../components/Error404';
 
 function Logement() {
-  let navigate = useNavigate();
   let { id } = useParams();
   const { data } = useContext(LogementContext);
 
   const logement = data.find((item) => item.id === id);
  
-  useEffect(() => {
-    if (!logement) {
-      navigate('/*');
-    }
-  }, [logement, navigate]);
-
   if (!logement) {
-    return null;
+    return <Error404 />;
   }
 
   return (
